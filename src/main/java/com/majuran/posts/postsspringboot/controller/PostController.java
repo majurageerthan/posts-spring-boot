@@ -29,6 +29,11 @@ public class PostController {
         return postService.savePost(postDto);
     }
 
+    @PutMapping("/post")
+    public PostDto updatePost(final @RequestBody PostDto postDto) {
+        return postService.savePost(postDto);
+    }
+
     @DeleteMapping("/post/{id}")
     public Boolean deletePost(@PathVariable Long id) {
         return postService.deletePost(id);

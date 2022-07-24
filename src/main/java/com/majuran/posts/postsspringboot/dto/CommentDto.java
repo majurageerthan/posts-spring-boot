@@ -5,11 +5,12 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class PostDto {
+public class CommentDto {
     private Long id;
-    private String title;
+    private String name;
+    private String email;
     private String body;
-    private Long authorId;
+    private Long postId;
     private Date createdOn;
     private Date modifiedOn;
 }

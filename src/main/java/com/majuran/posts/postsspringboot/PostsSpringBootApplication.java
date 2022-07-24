@@ -8,8 +8,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @EnableConfigurationProperties
 public class PostsSpringBootApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PostsSpringBootApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PostsSpringBootApplication.class, args);
+    }
 
 }

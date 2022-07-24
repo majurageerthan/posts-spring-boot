@@ -1,6 +1,7 @@
 package com.majuran.posts.postsspringboot.service.impl;
 
 import com.majuran.posts.postsspringboot.dto.PostDto;
+import com.majuran.posts.postsspringboot.entity.Author;
 import com.majuran.posts.postsspringboot.entity.Post;
 import com.majuran.posts.postsspringboot.repository.PostRepository;
 import com.majuran.posts.postsspringboot.service.PostService;
@@ -47,7 +48,7 @@ public class PostServiceImpl implements PostService {
         postDto.setId(post.getId());
         postDto.setTitle(post.getTitle());
         postDto.setBody(post.getBody());
-        postDto.setAuthorId(post.getAuthorId());
+        postDto.setAuthorId(post.getAuthor().getId());
         postDto.setCreatedOn(post.getCreatedOn());
         postDto.setModifiedOn(post.getModifiedOn());
         return postDto;
@@ -58,7 +59,7 @@ public class PostServiceImpl implements PostService {
         post.setId(postDto.getId());
         post.setTitle(postDto.getTitle());
         post.setBody(postDto.getBody());
-        post.setAuthorId(postDto.getAuthorId());
+        post.setAuthor(new Author(postDto.getAuthorId()));
         post.setCreatedOn(postDto.getCreatedOn());
         post.setModifiedOn(postDto.getModifiedOn());
         return post;
