@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Post {
+public class Comment {
     @Id
     @Getter
     @Setter
@@ -17,15 +17,18 @@ public class Post {
     private Long id;
     @Getter
     @Setter
-    private String title;
+    private String name;
+    @Getter
+    @Setter
+    private String email;
     @Getter
     @Setter
     private String body;
     @Getter
     @Setter
     @ManyToOne
-    @JoinColumn(name = "authorId", referencedColumnName = "id")
-    private Author author;
+    @JoinColumn(name = "postId", referencedColumnName = "id")
+    private Post post;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Getter
@@ -37,10 +40,10 @@ public class Post {
     @Setter
     private Date modifiedOn;
 
-    public Post() {
+    public Comment() {
     }
 
-    public Post(Long id) {
+    public Comment(Long id) {
         this.id = id;
     }
 
